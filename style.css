@@ -1,0 +1,315 @@
+@font-face { font-family: 'Kharkiv Tone'; src: url('KharkivTone-regular.ttf') format('truetype'); font-weight: 400; font-display: swap; }
+@font-face { font-family: 'MacPaw Fixel Display'; src: url('FixelDisplayRegular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+
+:root {
+    --bg-color: #F8F7F3; --text-main: #111111; --purple: #8561FF; --purple-light: #7F7AB4;
+    --dark-menu: #161616; --yellow-accent: #D1FF1C; --orange: #ff7e40; --blue: #2cc9ff;
+    --green: #2db573; --purple-superlight: #C1BEE2;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg-color); color: var(--text-main); font-family: 'Kharkiv Tone', sans-serif; overflow-x: hidden; }
+.logo, .start-title, h2 { font-family: 'Kharkiv Tone', sans-serif; text-transform: uppercase; }
+
+/* --- ХЕДЕР ТА РІЗНІ РУКОПИСНІ ОВАЛИ НАВІГАЦІЇ --- */
+header { display: flex; justify-content: space-between; align-items: center; max-width: 1320px; height: 90px; margin: 0 auto; padding: 20px 0; border-bottom: 1.5px solid #000; position: relative; z-index: 10; }
+.logo { display: flex; align-items: center; transition: transform .3s cubic-bezier(.22,1,.36,1); }
+.logo:hover { transform: scale(1.03); }
+.logo img { display: block; height: 22px; width: auto; }
+.desktop-nav { display: flex; align-items: center; gap: 22px; margin-left: auto; margin-right: 45px; }
+.desktop-nav a { position: relative; display: inline-flex; align-items: center; gap: 6px; padding: 12px 18px; font-family: 'MacPaw Fixel Display', sans-serif; font-size: 1rem; line-height: 1; text-decoration: none; color: var(--text-main); transition: transform .25s ease; }
+
+.desktop-nav a .nav-oval-svg { position: absolute; inset: -4px -8px; width: calc(100% + 16px); height: calc(100% + 8px); pointer-events: none; overflow: visible; z-index: 2; }
+.desktop-nav a .nav-oval-svg path { fill: none; stroke: #7F7AB4; stroke-width: 1.65; stroke-linecap: round; stroke-linejoin: round; transition: stroke-dashoffset .62s cubic-bezier(.22, 1, .36, 1), stroke .25s ease; }
+.desktop-nav a:hover .nav-oval-svg path,
+.desktop-nav a.active-link .nav-oval-svg path { stroke-dashoffset: 0 !important; stroke: #8561FF; }
+
+.nav-icon { width: 22px; height: 22px; object-fit: contain; transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+.desktop-nav a:hover .nav-icon { transform: rotate(-14deg) scale(1.15); }
+/* Кнопка перемикання мови у шапці */
+/* Робимо кнопку мови відносним елементом (як і .desktop-nav a) */
+.lang-btn {
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 12px 18px; /* Однакові відступи як у посилань навігації */
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: 'MacPaw Fixel Display', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1;
+    color: #000000;
+}
+
+/* Овал для посилань ТА для кнопки мови */
+.desktop-nav a .nav-oval-svg,
+.lang-btn .nav-oval-svg {
+    position: absolute;
+    inset: -4px -8px;
+    width: calc(100% + 16px);
+    height: calc(100% + 8px);
+    pointer-events: none;
+    overflow: visible;
+    z-index: 2;
+}
+
+.desktop-nav a .nav-oval-svg path,
+.lang-btn .nav-oval-svg path {
+    fill: none;
+    stroke: #7F7AB4;
+    stroke-width: 1.65;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dashoffset .62s cubic-bezier(.22, 1, .36, 1), stroke .25s ease;
+}
+
+/* Анімація появи овалу при наведенні */
+.desktop-nav a:hover .nav-oval-svg path,
+.desktop-nav a.active-link .nav-oval-svg path,
+.lang-btn:hover .nav-oval-svg path {
+    stroke-dashoffset: 0 !important;
+    stroke: #8561FF;
+}
+
+/* Стрілочка біля мови */
+.lang-btn .lang-arrow {
+    width: 6px;
+    height: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Щоб стрілка не стискалася */
+    margin-top: 1px; /* Легке піксельне коригування для ідеального центру по висоті літер */
+}
+.lang-btn:hover { transform: scale(1.06); }
+.mobile-menu-btn { display: none; }
+
+/* --- СЕКЦІЯ START --- */
+.hero { text-align: center; padding: 140px 20px 80px; position: relative; max-width: 1440px; margin: 0 auto; }
+.hero-bg { position: absolute; inset: 0; background: url('photos/painting.svg') center/contain no-repeat; z-index: -1; transition: transform .65s cubic-bezier(.22,1,.36,1); }
+.hero:hover .hero-bg { transform: scale(1.04); }
+.start-link { display: inline-block; text-decoration: none; color: var(--text-main); }
+.start-title { font-size: 5.375rem; font-weight: 400; line-height: 1; letter-spacing: 2px; margin-bottom: 18px; transition: transform .4s cubic-bezier(.22,1,.36,1), letter-spacing .4s ease; }
+.start-link:hover .start-title { transform: scale(1.07); letter-spacing: 4px; }
+
+.timeline { display: flex; align-items: center; justify-content: center; gap: 22px; }
+.timeline-text { font-family: 'Kharkiv Tone', sans-serif; font-size: 1rem; line-height: 1; transition: transform .45s cubic-bezier(.22,1,.36,1), color .3s ease; }
+.timeline-graphics { display: block; height: auto; max-width: 100%; transform-origin: center; transition: transform .45s cubic-bezier(.22,1,.36,1); }
+
+.start-link:hover .timeline-graphics { transform: scale(1.25); }
+.start-link:hover .timeline-text:first-child { transform: translateX(-34px); }
+.start-link:hover .timeline-text:last-child { transform: translateX(34px); color: var(--purple); }
+
+/* --- КОНТЕНТ: ЗАГОЛОВОК + 10 ПО-РІЗНОМУ АНІМОВАНИХ ФІГУР --- */
+.content-container { display: flex; justify-content: space-between; align-items: flex-end; max-width: 1320px; margin: 0 auto; padding: 0 0 80px; gap: 40px; }
+.text-block { flex: 1; }
+.text-block h2 { font-size: 3.5rem; font-weight: 400; line-height: 0.93; }
+.purple-text { color: var(--purple-light); display: inline-block; transition: color .3s ease; }
+.text-block:hover .purple-text { color: var(--purple); }
+
+.grid-block { flex: 0 0 730px; width: 730px; height: 292px; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, 1fr); gap: 0; }
+.cell { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; cursor: pointer; will-change: transform; }
+.cell img { width: 100%; height: 100%; object-fit: contain; display: block; pointer-events: none; user-select: none; }
+.cell:hover { animation-play-state: paused; transform: scale(0.9) !important; transition: transform .25s cubic-bezier(.22,1,.36,1); }
+
+@keyframes animPortrait { 0%, 100% { transform: rotate(0deg) scale(1); } 35% { transform: rotate(-7deg) scale(1.20); } 70% { transform: rotate(5deg) scale(1.03); } }
+@keyframes animSquish   { 0%, 100% { transform: scale(1); } 30% { transform: scale(0.89); } 55% { transform: scale(1.02); } 75% { transform: scale(0.97); } }
+@keyframes animPendulum { 0%, 100% { transform: rotate(0deg) scale(1); } 30% { transform: rotate(-16deg) scale(0.95); } 65% { transform: rotate(12deg) scale(0.98); } }
+@keyframes animTurn90   { 0%, 20% { transform: rotate(0deg) scale(1); } 45%, 65% { transform: rotate(90deg) scale(0.94); } 88%, 100% { transform: rotate(0deg) scale(1); } }
+@keyframes animTurnNeg  { 0%, 25% { transform: rotate(0deg) scale(1); } 50%, 72% { transform: rotate(-90deg) scale(0.94); } 92%, 100% { transform: rotate(0deg) scale(1); } }
+
+.cell1  { animation: animPortrait 4.7s cubic-bezier(.34,1.56,.64,1) infinite 0s; }
+.cell2  { animation: animSquish   4.4s cubic-bezier(.34,1.56,.64,1) infinite 0.5s; }
+.cell3  { animation: animPendulum 5.0s cubic-bezier(.34,1.56,.64,1) infinite 1.1s; }
+.cell4  { animation: animPortrait 5.6s cubic-bezier(.34,1.56,.64,1) infinite 1.7s; }
+.cell5  { animation: animPendulum 4.8s cubic-bezier(.34,1.56,.64,1) infinite 0.8s; }
+.cell6  { animation: animSquish   4.6s cubic-bezier(.34,1.56,.64,1) infinite 1.4s; }
+.cell7  { animation: animSquish   4.2s cubic-bezier(.34,1.56,.64,1) infinite 0.3s; }
+.cell8  { animation: animTurn90   5.8s cubic-bezier(.34,1.56,.64,1) infinite 0.9s; }
+.cell9  { animation: animTurnNeg  6.0s cubic-bezier(.34,1.56,.64,1) infinite 2.1s; }
+.cell10 { animation: animPortrait 5.1s cubic-bezier(.34,1.56,.64,1) infinite 1.2s; }
+.cell1, .cell4, .cell10 { z-index: 1; }
+
+/* --- OVERLAYS (ТЕМНЕ МЕНЮ НАВІГАЦІЇ ТА ФІОЛЕТОВЕ МЕНЮ МОВ) --- */
+.overlay { position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.overlay.active { opacity: 1; pointer-events: all; }
+
+.dark-overlay {
+    background-color: var(--dark-menu);
+    background-image: url('photos/blackstroke.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.purple-overlay { background: #7C5DFA; }
+
+.overlay-header { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 1320px; padding: 32px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 2; }
+.overlay-logo img { height: 22px; filter: brightness(0) invert(1); display: block; }
+.close-btn { background: transparent; border: none; color: #fff; font-size: 2rem; line-height: 1; cursor: pointer; transition: transform .25s ease; }
+.close-btn:hover { transform: rotate(90deg) scale(1.1); }
+
+.mobile-nav-list { display: flex; flex-direction: column; align-items: center; width: 100%; position: relative; z-index: 2; }
+.overlay a { color: #fff; text-decoration: none; font-family: 'MacPaw Fixel Display', sans-serif; font-size: 1.55rem; margin: 14px 0; transition: color .2s ease, transform .2s ease; }
+.overlay a:hover { color: var(--yellow-accent); transform: translateX(6px); }
+
+.lang-list { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 22px; width: 339px; height: 710px; background: url('photos/Group 28.svg') center/contain no-repeat; position: relative; z-index: 2; }
+.lang-list button { background: none; border: none; color: #fff; font-size: 1.55rem; font-weight: 400; cursor: pointer; font-family: 'Kharkiv Tone', sans-serif; transition: transform .2s ease, color .2s ease; }
+.lang-list button:hover, .lang-list button.active { color: var(--yellow-accent); transform: scale(1.1); }
+
+/* --- СТОРІНКА ABOUT PROJECT --- */
+.about-page { max-width: 1320px; margin: 0 auto; padding: 60px 0 100px; }
+.about-title { font-size: 5rem; font-weight: 400; line-height: 1; text-align: center; margin-bottom: 65px; }
+.about-grid { display: flex; justify-content: space-between; align-items: flex-start; gap: 80px; }
+.about-text-column { flex: 1; max-width: 760px; display: flex; flex-direction: column; }
+.about-lead { font-family: 'MacPaw Fixel Display', sans-serif; font-size: 24px; line-height: 1.4; margin-bottom: 32px; }
+.purple-highlight { font-weight: 600; color: var(--purple); }
+.about-circles { display: flex; margin-bottom: 32px; }
+.about-circles .dot { width: 34px; height: 34px; border-radius: 50%; transition: transform .3s ease; }
+.about-circles:hover .dot:first-child { transform: translateX(-4px); }
+.about-circles:hover .dot:last-child { transform: translateX(4px); }
+.dot-lilac { background: #c576d6; }
+.dot-green { background: #16b800; }
+.about-paragraphs { display: flex; flex-direction: column; gap: 32px; }
+.about-paragraphs p { font-family: 'MacPaw Fixel Display', sans-serif; font-size: 18px; line-height: 1.4; color: #5B5B5B; }
+.about-triangles { display: flex; justify-content: flex-end; gap: 4px; margin-top: 35px; }
+.about-triangles .tri { width: 34px; height: 34px; clip-path: polygon(0 0, 100% 0, 100% 100%); }
+.tri-green { background: var(--green); }
+.tri-orange { background: var(--orange); }
+.about-partners-column { flex: 0 0 380px; display: flex; justify-content: flex-end; }
+.partners-capsule { width: 380px; min-height: 760px; background: #7c5dfa; border-radius: 999px; padding: 130px 60px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; }
+.partner-logo { max-width: 100%; height: 54px; object-fit: contain; transition: transform .3s ease; }
+.partner-logo:hover { transform: scale(1.06); }
+
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 1360px) {
+    header, .content-container, .about-page { padding-left: 24px; padding-right: 24px; }
+}
+@media (max-width: 1150px) {
+    .content-container { flex-direction: column; align-items: flex-start; }
+    .text-block h2 { text-align: left; font-size: 2.8rem; }
+    .grid-block { flex: none; width: 100%; max-width: 730px; height: auto; aspect-ratio: 5 / 2; }
+}
+@media (max-width: 900px) {
+    header { height: 74px; padding: 14px 20px; }
+    .desktop-nav { display: none; }
+
+    /* Бургер з 3 лініями (нижня коротша, як на макеті) */
+    .mobile-menu-btn { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px 0; width: 32px; }
+    .mobile-menu-btn span { display: block; width: 28px; height: 2.5px; background: #000; border-radius: 2px; margin: 0; }
+    .mobile-menu-btn span:last-child { width: 17px; }
+
+    .logo img { height: 15px; }
+    .lang-btn { display: block; width: 72px; height: 42px; }
+
+    /* Головний екран START на телефоні */
+    .hero { padding: 110px 20px 75px; }
+    .hero-bg { background-size: 135% auto; background-position: center 20%; }
+    .start-title { font-size: 4.1rem; margin-bottom: 14px; }
+    .timeline { gap: 0; }
+    .timeline-text { display: none; }
+    .timeline-graphics { width: 225px; max-width: 75vw; }
+    .start-link:hover .timeline-graphics { transform: scale(1.08); }
+
+    /* Текст по лівому краю + сітка 5x2 знизу */
+    .content-container { flex-direction: column; align-items: flex-start; padding: 10px 20px 44px; gap: 28px; }
+    .text-block { width: 100%; }
+    .text-block h2 { text-align: left; font-size: 2.05rem; line-height: 0.98; }
+    .grid-block { width: 100%; max-width: 100%; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, 1fr); aspect-ratio: 5 / 2; }
+
+    /* Мобільні меню (різні: темне зліва по лівому краю + фіолетове мов по центру) */
+    .overlay-header { padding: 22px 20px; justify-content: flex-start; }
+    .overlay-logo { display: none; }
+    .close-btn { font-size: 1.85rem; }
+
+    .dark-overlay {
+        align-items: flex-start;
+        background-image: url('photos/blackstroke.svg');
+        background-size: 94% 96%;
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+    .mobile-nav-list {
+        align-items: flex-start;
+        padding: 0 24px;
+        gap: 32px;
+    }
+    .mobile-nav-list a {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    .lang-list { width: 100%; height: 82vh; gap: 28px; }
+
+    .about-grid { flex-direction: column; align-items: center; gap: 50px; }
+    .about-title { font-size: 2.8rem; }
+    .partners-capsule { width: 100%; max-width: 320px; min-height: 580px; padding: 90px 45px; }
+}
+
+/* --- СПЛИВАЮЧЕ ВІКНО PSYCHOLOGIST'S ADVICE --- */
+.advice-modal-overlay {
+    position: fixed; inset: 0; z-index: 300;
+    background: rgba(65, 65, 65, 0.36);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    display: flex; justify-content: center; align-items: center; padding: 20px;
+    opacity: 0; pointer-events: none;
+    transition: opacity .3s cubic-bezier(.22, 1, .36, 1);
+}
+.advice-modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.advice-modal-card {
+    position: relative; width: 960px; max-width: 100%; min-height: 440px;
+    border-radius: 30px; padding: 72px 84px 80px; overflow: hidden;
+    background: linear-gradient(112deg, rgba(199, 194, 230, 0.78) 0%, rgba(223, 220, 235, 0.76) 28%, rgba(243, 242, 238, 0.8) 52%, rgba(229, 252, 139, 0.78) 82%, rgba(215, 250, 75, 0.82) 100%);
+    backdrop-filter: blur(22px) saturate(135%); -webkit-backdrop-filter: blur(22px) saturate(135%);
+    border: 1.5px solid rgba(255, 255, 255, 0.88);
+    box-shadow: 0 28px 70px rgba(0, 0, 0, 0.16), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+    display: flex; flex-direction: column; justify-content: center;
+    transform: translateY(18px) scale(0.95);
+    transition: transform .34s cubic-bezier(.22, 1, .36, 1);
+}
+.advice-modal-card::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 48%, rgba(255, 255, 255, 0.28) 100%);
+}
+.advice-modal-overlay.active .advice-modal-card { transform: translateY(0) scale(1); }
+
+.advice-modal-header, .advice-modal-body { position: relative; z-index: 1; }
+.advice-modal-header {
+    display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    margin-bottom: 38px;
+}
+.advice-title-group { display: flex; align-items: center; gap: 22px; }
+.advice-pixel-icon { width: 44px; height: 40px; object-fit: contain; flex-shrink: 0; display: block; }
+.advice-modal-title {
+    font-family: 'Kharkiv Tone', sans-serif; font-weight: 400; font-size: 2rem;
+    line-height: 1.1; text-transform: none; color: var(--text-main); margin: 0;
+}
+
+.advice-close-btn {
+    background: transparent; border: none; padding: 6px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; color: var(--text-main);
+    transition: transform .28s cubic-bezier(.34, 1.56, .64, 1), opacity .2s ease;
+}
+.advice-close-btn:hover { transform: rotate(90deg) scale(1.12); opacity: 0.7; }
+
+.advice-modal-body {
+    font-family: 'MacPaw Fixel Display', sans-serif; font-weight: 400;
+    font-size: 1.125rem; line-height: 1.5; color: #262626;
+    max-width: 720px; padding-left: 66px; margin: 0;
+}
+
+@media (max-width: 900px) {
+    .advice-modal-card { min-height: 320px; padding: 36px 26px 42px; border-radius: 24px; }
+    .advice-modal-header { margin-bottom: 22px; }
+    .advice-title-group { gap: 14px; }
+    .advice-pixel-icon { width: 32px; height: 30px; }
+    .advice-modal-title { font-size: 1.35rem; }
+    .advice-modal-body { padding-left: 0; font-size: 0.98rem; line-height: 1.45; }
+}

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Define Your Boundaries - Sex Ed Labyrinth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="boundaries.css">
+</head>
+<body>
+
+    <!-- Хедер -->
+    <header>
+        <button class="mobile-menu-btn" id="burger-btn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <a href="index.html" class="logo">
+            <img src="photos/logo.svg" alt="Sex Ed Labyrinth">
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="about.html"><img src="photos/lightning.png" alt="⚡" class="nav-icon" onerror="this.style.display='none'"><span data-i18n="nav-about">About Project</span></a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+
+        <button class="lang-btn" id="open-lang-desktop" aria-label="Змінити мову">
+    <span class="lang-text">ENG</span>
+    <span class="lang-arrow">▾</span>
+</button>
+    </header>
+
+    <!-- Головна частина сторінки Boundaries -->
+    <main class="boundaries-page">
+
+        <h1 class="page-title" data-i18n="boundaries-title">DEFINE YOUR<br>BOUNDARIES</h1>
+
+        <p class="boundaries-description" data-i18n="boundaries-desc">
+            Our boundaries are our own and we all have the right to decide where they end and begin.
+            Use this tool to explore what is acceptable to you, and what is unacceptable by dragging the
+            provided text boxes into the column where you feel they best belong. You can also fill in the
+            text box with additional descriptions of boundaries. Once you're done, you can download the
+            final image as a PDF to your device.
+        </p>
+
+        <!-- Верхній заголовок для мобільної версії (ACCEPTABLE) -->
+        <div class="mobile-header-top">
+            <img src="photos/good.svg" alt="Acceptable" class="header-icon">
+            <h3 data-i18n="col-acceptable">ACCEPTABLE</h3>
+            <span class="count" id="count-left-mobile">6</span>
+        </div>
+
+        <!-- Робоча зона з вільним перетягуванням -->
+        <div class="boundaries-workspace" id="main-workspace">
+            
+            <!-- Десктопний заголовок ACCEPTABLE -->
+            <div class="column-header left-header">
+                <img src="photos/good.svg" alt="Acceptable" class="header-icon">
+                <h3 data-i18n="col-acceptable">ACCEPTABLE</h3>
+                <span class="count" id="count-left">6</span>
+            </div>
+
+            <!-- Десктопний заголовок UNACCEPTABLE -->
+            <div class="column-header right-header">
+                <img src="photos/bad.svg" alt="Unacceptable" class="header-icon">
+                <h3 data-i18n="col-unacceptable">UNACCEPTABLE</h3>
+                <span class="count" id="count-right">3</span>
+            </div>
+            
+            <!-- Фонова градієнтна капсула -->
+            <div class="workspace-bg" id="workspace-bg">
+                <button class="add-custom-btn" id="open-modal-btn" type="button" aria-label="Add custom boundary">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="9.5"></circle>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                        <line x1="8" y1="12" x2="16" y2="12"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- ТЕГИ ДЛЯ ВІЛЬНОГО ПЕРЕТЯГУВАННЯ -->
+            <div class="drag-item" id="tag1" style="top: 17%; left: 7.5%;" data-i18n="tag-1">initiating/having sex while or after<br>using alcohol/recreational drugs</div>
+            <div class="drag-item" id="tag2" style="top: 34%; left: 4.5%;" data-i18n="tag-2">sharing passwords with a partner</div>
+            <div class="drag-item" id="tag3" style="top: 49%; left: 3.5%;" data-i18n="tag-3">kissing in public</div>
+            <div class="drag-item" id="tag4" style="top: 64%; left: 4.5%;" data-i18n="tag-4">having unprotected sex</div>
+            <div class="drag-item" id="tag5" style="top: 50%; left: 17%;" data-i18n="tag-5">getting tested for STIs before sex<br>with a partner</div>
+            <div class="drag-item" id="tag6" style="top: 79%; left: 8.5%;" data-i18n="tag-6">sending nude photos</div>
+
+            <div class="drag-item" id="tag7" style="top: 21%; left: 39%;" data-i18n="tag-7">using sex toys with a partner</div>
+            
+            <div class="drag-item" id="tag8" style="top: 19%; left: 71%;" data-i18n="tag-8">following sex work related<br>creators online</div>
+            <div class="drag-item" id="tag9" style="top: 63%; left: 70%;" data-i18n="tag-9">family or co-workers about my sex life</div>
+            <div class="drag-item" id="tag10" style="top: 79%; left: 66%;" data-i18n="tag-10">posting about the relationship publicly</div>
+            
+        </div>
+
+        <!-- Нижній заголовок для мобільної версії (UNACCEPTABLE) -->
+        <div class="mobile-header-bottom">
+            <img src="photos/bad.svg" alt="Unacceptable" class="header-icon">
+            <h3 data-i18n="col-unacceptable">UNACCEPTABLE</h3>
+            <span class="count" id="count-right-mobile">3</span>
+        </div>
+
+        <!-- Кнопки дій -->
+        <div class="action-buttons">
+            <button class="btn-black" id="save-pdf-btn" data-i18n="btn-save">SAVE PDF</button>
+            <button class="btn-black" id="share-btn" data-i18n="btn-share">SHARE</button>
+        </div>
+    </main>
+
+    <!-- СПЛИВАЮЧЕ ВІКНО ДОДАВАННЯ ВЛАСНОЇ МЕЖІ -->
+    <div id="add-boundary-modal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-top-row">
+                <h3 data-i18n="modal-title">Create your boundaries</h3>
+                <button class="modal-close-btn" id="close-modal-btn" type="button" aria-label="Close modal">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#111111" stroke-width="1.3">
+                        <line x1="4" y1="4" x2="20" y2="20"></line>
+                        <line x1="20" y1="4" x2="4" y2="20"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="modal-input-wrapper">
+                <input type="text" id="custom-boundary-input" placeholder="Write your boundary" data-i18n-placeholder="modal-placeholder" maxlength="250" autocomplete="off">
+                <span class="char-count" id="char-counter">0/250</span>
+                <button class="btn-add-custom" id="add-custom-boundary-btn" type="button" data-i18n="modal-add">ADD</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Темне меню навігації (з фоном photos/scribble.svg) -->
+    <div id="mobile-menu" class="overlay dark-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-mobile-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <nav class="mobile-nav-list">
+            <a href="about.html" data-i18n="nav-about">About Project</a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+    </div>
+
+    <!-- Фіолетове меню вибору мови -->
+    <div id="lang-menu" class="overlay purple-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo">
+                <img src="photos/logo.svg" alt="SEX ED. LABYRINTH">
+            </a>
+            <button class="close-btn" id="close-lang-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <div class="lang-list">
+            <button class="active" data-lang="ENG">ENG</button>
+            <button data-lang="EST">EST</button>
+            <button data-lang="RUM">RUM</button>
+            <button data-lang="LIT">LIT</button>
+            <button data-lang="UKR">UKR</button>
+            <button data-lang="ALB">ALB</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

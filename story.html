@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story — Sex Ed Labyrinth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="story_preview.css">
+</head>
+<body>
+
+    <!-- Шапка (Header) -->
+    <header class="site-header">
+        <button class="mobile-menu-btn" id="burger-btn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="logo">
+            <img src="photos/logo.svg" alt="Sex Ed Labyrinth">
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="about.html">
+                <img src="photos/lightning.png" alt="⚡" class="nav-icon" onerror="this.style.display='none'">
+                <span data-i18n="nav-about">About Project</span>
+            </a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+
+        <button class="lang-btn" id="open-lang-desktop" aria-label="Змінити мову">
+    <span class="lang-text">ENG</span>
+    <span class="lang-arrow">▾</span>
+</button>
+    </header>
+
+    <!-- Основний контент сторінки історії -->
+    <main class="story-preview-page">
+        <a href="stories.html" class="back-link">
+    <svg class="back-arrow" width="52" height="12" viewBox="0 0 52 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M52 6H2M2 6L7 1M2 6L7 11" stroke="#111111" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span data-i18n="back-to-list">back to list</span>
+</a>
+
+        <section class="story-preview-container">
+            <!-- Ліва частина: Арт з фотографією та зеленою анімованою лінією -->
+            <div class="story-preview-art">
+                <img id="story-photo" src="" alt="" class="story-preview-photo">
+                <img src="photos/stroke.svg" alt="" class="story-preview-stroke">
+            </div>
+
+            <!-- Права частина: Інформація про історію (динамічні id для story.js) -->
+            <div class="story-preview-info">
+                <h1 id="story-title" class="story-preview-title">LOADING...</h1>
+                
+                <p id="story-desc" class="story-preview-desc">
+                    Loading story description...
+                </p>
+
+                <!-- Кнопка Start story -->
+<a id="start-game-btn" href="story_game.html?id=1" class="start-story-btn">
+    <span data-i18n="btn-start-story">Start story</span>
+    <svg class="btn-arrow" width="46" height="12" viewBox="0 0 46 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 6H44M44 6L39 1M44 6L39 11" stroke="#D1FF1C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальні меню (Мобільне та Мовне) -->
+    <div id="mobile-menu" class="overlay dark-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-mobile-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <nav class="mobile-nav-list">
+            <a href="about.html">About Project</a>
+            <a href="authors.html">Authors</a>
+            <a href="boundaries.html">Define your boundaries</a>
+            <a href="advice.html">Psychologist's Advice</a>
+        </nav>
+    </div>
+
+    <div id="lang-menu" class="overlay purple-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-lang-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <div class="lang-list">
+            <button class="active" data-lang="ENG">ENG</button>
+            <button data-lang="EST">EST</button>
+            <button data-lang="RUM">RUM</button>
+            <button data-lang="LIT">LIT</button>
+            <button data-lang="UKR">UKR</button>
+            <button data-lang="ALB">ALB</button>
+        </div>
+    </div>
+
+    <!-- Скрипти -->
+    <script src="script.js"></script>
+    <script src="story.js"></script>
+</body>
+</html>

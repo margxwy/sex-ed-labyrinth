@@ -1,0 +1,14 @@
+Fixel 1.211 — original embedded copyright notice
+
+© 2023 MacPaw Inc. (Authors: Alfabravo + MacPaw)
+
+This notice is copied verbatim from name ID 0 of the original fonts in
+https://fonts.macpaw.com/fonts/FixelAll.zip and remains embedded in all
+packaged font files, including the WOFF2 conversions of variable TTFs.
+
+The official repository's OFL.txt additionally states:
+Copyright (c) 2023 MacPaw Way Ltd., (https://macpaw.com)
+
+MacPaw updated the repository's copyright holder in September 2026.
+Both notices are retained; the original OFL.txt is included unchanged.
+The software remains under SIL Open Font License 1.1.

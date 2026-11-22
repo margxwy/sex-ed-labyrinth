@@ -1,0 +1,43 @@
+/* --- СТОРІНКА AUTHORS --- */
+.authors-page { width: 100%; padding: 36px 0 44px; overflow: hidden; }
+.authors-title { font-family: 'Kharkiv Tone', sans-serif; font-weight: 400; font-size: 4.5rem; /* 72px */ line-height: 1; text-align: center; text-transform: uppercase; margin-bottom: 34px; color: var(--text-main); }
+
+/* Контейнер 4 потоків авторів (компактніша висота) */
+.authors-streams { width: 100%; display: flex; flex-direction: column; gap: 14px; margin-bottom: 44px; }
+.author-row { position: relative; width: 100%; height: 58px; overflow: hidden; }
+
+/* Картка кожного автора */
+.author-card { position: absolute; top: 50%; left: 0; display: inline-flex; align-items: center; gap: 16px; padding: 4px 16px 4px 4px; border-radius: 999px; cursor: pointer; user-select: none; will-change: transform; transition: background-color .25s ease; }
+.author-card img { width: 82px; height: 48px; border-radius: 999px; object-fit: cover; background: #EAE9E4; flex-shrink: 0; transition: transform .32s cubic-bezier(.34,1.56,.64,1); }
+.author-card span { font-family: 'MacPaw Fixel Display', sans-serif; font-weight: 400; font-size: 1.65rem; line-height: 1; color: var(--text-main); white-space: nowrap; transition: color .25s ease; }
+
+/* Стан при наведенні на конкретного автора (коли він зупиняється) */
+.author-card:hover { background: var(--bg-color); z-index: 5; }
+.author-card:hover img { transform: scale(1.08); }
+.author-card:hover span { color: var(--purple); }
+
+/* Нижня лаймова плашка MENTORS */
+.mentors-banner { max-width: 1320px; margin: 0 auto; background: var(--yellow-accent); border-radius: 20px; padding: 14px 44px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.mentors-label { font-family: 'Kharkiv Tone', sans-serif; font-weight: 400; font-size: 2.15rem; line-height: 1; text-transform: uppercase; color: rgba(17, 17, 17, 0.28); margin: 0; }
+.mentors-list { display: flex; align-items: center; gap: 48px; }
+.mentor-card { display: inline-flex; align-items: center; gap: 16px; padding: 4px 14px 4px 4px; border-radius: 999px; cursor: pointer; transition: transform .28s cubic-bezier(.34,1.56,.64,1), background-color .25s ease; }
+.mentor-card img { width: 82px; height: 48px; border-radius: 999px; object-fit: cover; background: rgba(255,255,255,0.45); flex-shrink: 0; }
+.mentor-card span { font-family: 'MacPaw Fixel Display', sans-serif; font-size: 1.65rem; line-height: 1; color: var(--text-main); white-space: nowrap; }
+.mentor-card:hover { transform: translateY(-2px) scale(1.03); background: rgba(255, 255, 255, 0.38); }
+
+/* Адаптивність */
+@media (max-width: 1360px) {
+    .mentors-banner { margin: 0 24px; }
+}
+@media (max-width: 900px) {
+    .authors-page { padding: 26px 0 42px; }
+    .authors-title { font-size: 2.6rem; margin-bottom: 24px; }
+    .authors-streams { gap: 10px; margin-bottom: 32px; }
+    .author-row { height: 48px; }
+    .author-card { gap: 12px; }
+    .author-card img, .mentor-card img { width: 64px; height: 38px; }
+    .author-card span, .mentor-card span { font-size: 1.2rem; }
+    .mentors-banner { flex-direction: column; align-items: flex-start; margin: 0 18px; padding: 18px 22px; border-radius: 18px; }
+    .mentors-label { font-size: 1.6rem; }
+    .mentors-list { flex-wrap: wrap; gap: 18px; }
+}

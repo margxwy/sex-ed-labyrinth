@@ -1,0 +1,257 @@
+/* ==========================================================================
+   СПОЙЛЕР / ПРЕВ'Ю ІСТОРІЇ (STORY PREVIEW PAGE) — FULL RESPONSIVE
+   ========================================================================== */
+
+/* Основна обгортка сторінки */
+.story-preview-page {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px 100px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Кнопка повернення "back to list" */
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    color: var(--text-main, #111111);
+    font-family: 'MacPaw Fixel Display', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 28px;
+    margin-bottom: 36px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+    transform: translateX(-4px);
+}
+
+.back-arrow {
+    display: block;
+    width: 48px;
+    height: auto;
+}
+
+/* Головний контейнер історії */
+.story-preview-container {
+    width: 100%;
+    max-width: 1320px;
+    display: grid;
+    grid-template-columns: 502px 1fr;
+    gap: 60px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   ЛІВИЙ БЛОК: АРТ ТА ФОТО
+   -------------------------------------------------------------------------- */
+.story-preview-art {
+    position: relative;
+    width: 502px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Зелена крива лінія поверх маски */
+.story-preview-stroke {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 115%;
+    height: 115%;
+    object-fit: contain;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Фотографія героя у формі маски */
+.story-preview-photo {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* --------------------------------------------------------------------------
+   ПРАВИЙ БЛОК: ТЕКСТ ТА КНОПКА
+   -------------------------------------------------------------------------- */
+.story-preview-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 620px;
+}
+
+/* Великий заголовок Kharkiv Tone */
+.story-preview-title {
+    font-family: 'Kharkiv Tone', sans-serif;
+    font-size: 64px;
+    line-height: 1.0;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 24px 0;
+    letter-spacing: 0;
+}
+
+/* Опис MacPaw Fixel Display */
+.story-preview-desc {
+    font-family: 'MacPaw Fixel Display', sans-serif;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 400;
+    color: #5b5b5b;
+    margin: 0 0 36px 0;
+    max-width: 580px;
+}
+
+/* Чорна кнопка "Start story" */
+.start-story-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #111111;
+    color: #FFFFFF;
+    font-family: 'MacPaw Fixel Display', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 28px;
+    border-radius: 40px;
+    text-decoration: none;
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), 
+                box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.start-story-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.start-story-btn .btn-arrow {
+    display: block;
+    width: 38px;
+    height: auto;
+    transition: transform 0.25s ease;
+}
+
+.start-story-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* ==========================================================================
+   АДАПТИВНІСТЬ ТА МЕДІА-ЗАПИТИ (BREAKPOINTS)
+   ========================================================================== */
+
+/* Ноутбуки / середні монітори */
+@media (max-width: 1200px) {
+    .story-preview-container {
+        grid-template-columns: 440px 1fr;
+        gap: 40px;
+    }
+
+    .story-preview-art {
+        width: 440px;
+        height: 420px;
+    }
+
+    .story-preview-title {
+        font-size: 52px;
+    }
+
+    .story-preview-desc {
+        font-size: 17px;
+    }
+}
+
+/* Планшети (вертикальний режим) */
+@media (max-width: 992px) {
+    .story-preview-page {
+        padding-bottom: 60px;
+    }
+
+    .story-preview-container {
+        grid-template-columns: 1fr; /* Перехід у 1 колонку */
+        gap: 36px;
+    }
+
+    .story-preview-art {
+        width: 100%;
+        max-width: 420px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    .story-preview-info {
+        max-width: 100%;
+        align-items: flex-start;
+    }
+
+    .story-preview-title {
+        font-size: 44px;
+        margin-bottom: 20px;
+    }
+
+    .story-preview-desc {
+        max-width: 100%;
+        margin-bottom: 28px;
+    }
+}
+
+/* Мобільні пристрої */
+@media (max-width: 576px) {
+    .story-preview-page {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 40px;
+    }
+
+    .back-link {
+        margin-top: 16px;
+        margin-bottom: 24px;
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .back-arrow {
+        width: 36px;
+    }
+
+    .story-preview-art {
+        max-width: 320px;
+    }
+
+    .story-preview-title {
+        font-size: 32px;
+        line-height: 1.05;
+        margin-bottom: 16px;
+    }
+
+    .story-preview-desc {
+        font-size: 15px;
+        line-height: 1.45;
+        margin-bottom: 24px;
+    }
+
+    .start-story-btn {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        padding: 14px 20px;
+        font-size: 15px;
+    }
+}

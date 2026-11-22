@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sex Ed Labyrinth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <button class="mobile-menu-btn" id="burger-btn" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+
+        <a href="index.html" class="logo">
+            <img src="photos/logo.svg" alt="Sex Ed Labyrinth">
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="about.html"><img src="photos/lightning.png" alt="⚡" class="nav-icon" onerror="this.style.display='none'"><span data-i18n="nav-about">About Project</span></a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+
+        <button class="lang-btn" id="open-lang-desktop" aria-label="Змінити мову">
+    <span class="lang-text">ENG</span>
+    <span class="lang-arrow">▾</span>
+</button>
+    </header>
+
+    <main>
+        <!-- Секція START зі стрілкою photos/arrow.svg -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <a href="stories.html" class="start-link">
+                <h1 class="start-title" data-i18n="start-title">START</h1>
+                <div class="timeline">
+                    <span class="timeline-text" data-i18n="tl-start">start the game</span>
+                    <img src="photos/arrow.svg" alt="arrow" class="timeline-graphics">
+                    <span class="timeline-text" data-i18n="tl-choose">choose your story</span>
+                </div>
+            </a>
+        </section>
+
+        <!-- Секція Текст + 10 по-різному анімованих фігур cell1..cell10 -->
+        <section class="content-container">
+            <div class="text-block">
+                <h2>
+                    <span class="purple-text" data-i18n="title-part1">GO THROUGH<br>SEX STORIES</span><br>
+                    <span data-i18n="title-part2">WHAT DID YOU<br>DO IN THEIR<br>PLACE?</span>
+                </h2>
+            </div>
+
+            <div class="grid-block">
+                <div class="cell cell1"><img src="photos/cell1.png" alt=""></div>
+                <div class="cell cell2"><img src="photos/cell2.png" alt=""></div>
+                <div class="cell cell3"><img src="photos/cell3.png" alt=""></div>
+                <div class="cell cell4"><img src="photos/cell4.png" alt=""></div>
+                <div class="cell cell5"><img src="photos/cell5.png" alt=""></div>
+                <div class="cell cell6"><img src="photos/cell6.png" alt=""></div>
+                <div class="cell cell7"><img src="photos/cell7.png" alt=""></div>
+                <div class="cell cell8"><img src="photos/cell8.png" alt=""></div>
+                <div class="cell cell9"><img src="photos/cell9.png" alt=""></div>
+                <div class="cell cell10"><img src="photos/cell10.png" alt=""></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Темне меню навігації (з фоном photos/scribble.svg) -->
+    <div id="mobile-menu" class="overlay dark-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-mobile-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <nav class="mobile-nav-list">
+            <a href="about.html" data-i18n="nav-about">About Project</a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+    </div>
+
+    <!-- Фіолетове меню вибору мови -->
+    <div id="lang-menu" class="overlay purple-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-lang-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <div class="lang-list">
+            <button class="active" data-lang="ENG">ENG</button>
+            <button data-lang="EST">EST</button>
+            <button data-lang="RUM">RUM</button>
+            <button data-lang="LIT">LIT</button>
+            <button data-lang="UKR">UKR</button>
+            <button data-lang="ALB">ALB</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

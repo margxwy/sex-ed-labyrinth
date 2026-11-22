@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors — Sex Ed Labyrinth</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="authors.css">
+</head>
+<body>
+
+    <header>
+        <button class="mobile-menu-btn" id="burger-btn" aria-label="Меню">
+            <span></span><span></span><span></span>
+        </button>
+
+        <a href="index.html" class="logo">
+            <img src="photos/logo.svg" alt="Sex Ed Labyrinth">
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="about.html"><img src="photos/lightning.png" alt="⚡" class="nav-icon" onerror="this.style.display='none'"><span data-i18n="nav-about">About Project</span></a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+
+        <button class="lang-btn" id="open-lang-desktop" aria-label="Змінити мову">
+    <span class="lang-text">ENG</span>
+    <span class="lang-arrow">▾</span>
+</button>
+    </header>
+
+    <main class="authors-page">
+        <h1 class="authors-title" data-i18n="authors-title">AUTHORS</h1>
+
+        <!-- 4 ряди авторів -->
+        <section class="authors-streams" aria-label="Project Authors">
+            <div class="author-row" data-speed="1.85">
+                <div class="author-card" data-start="0.04"><img src="photos/author1.png" alt="Kseniya"><span>Kseniya</span></div>
+                <div class="author-card" data-start="0.38"><img src="photos/author2.png" alt="Mădălina"><span>Mădălina</span></div>
+                <div class="author-card" data-start="0.76"><img src="photos/author3.png" alt="Ingrid"><span>Ingrid</span></div>
+            </div>
+
+            <div class="author-row" data-speed="1.6">
+                <div class="author-card" data-start="0.16"><img src="photos/author4.png" alt="Asya"><span>Asya</span></div>
+                <div class="author-card" data-start="0.65"><img src="photos/author5.png" alt="Leonid"><span>Leonid</span></div>
+            </div>
+
+            <div class="author-row" data-speed="2.1">
+                <div class="author-card" data-start="0.42"><img src="photos/author6.png" alt="Xheni"><span>Xheni</span></div>
+            </div>
+
+            <div class="author-row" data-speed="1.7">
+                <div class="author-card" data-start="0.11"><img src="photos/author7.png" alt="Diana"><span>Diana</span></div>
+                <div class="author-card" data-start="0.72"><img src="photos/author8.png" alt="Kornelija"><span>Kornelija</span></div>
+            </div>
+        </section>
+
+        <!-- Нижня лаймова капсула Mentors -->
+        <section class="mentors-banner">
+            <h2 class="mentors-label" data-i18n="mentors-title">Mentors</h2>
+            <div class="mentors-list">
+                <div class="mentor-card">
+                    <img src="photos/author9.png" alt="Daria">
+                    <span>Daria</span>
+                </div>
+                <div class="mentor-card">
+                    <img src="photos/author10.png" alt="Arminas">
+                    <span>Arminas</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Темне меню навігації (з фоном photos/scribble.svg) -->
+    <div id="mobile-menu" class="overlay dark-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-mobile-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <nav class="mobile-nav-list">
+            <a href="about.html" data-i18n="nav-about">About Project</a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+    </div>
+
+    <!-- Фіолетове меню вибору мови -->
+    <div id="lang-menu" class="overlay purple-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-lang-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <div class="lang-list">
+            <button class="active" data-lang="ENG">ENG</button>
+            <button data-lang="EST">EST</button>
+            <button data-lang="RUM">RUM</button>
+            <button data-lang="LIT">LIT</button>
+            <button data-lang="UKR">UKR</button>
+            <button data-lang="ALB">ALB</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const rows = document.querySelectorAll('.author-row');
+            const items = [];
+
+            rows.forEach(row => {
+                const speed = parseFloat(row.dataset.speed) || 1.8;
+                const cards = Array.from(row.querySelectorAll('.author-card'));
+
+                cards.forEach(card => {
+                    const state = {
+                        el: card,
+                        row,
+                        speed,
+                        paused: false,
+                        startRatio: parseFloat(card.dataset.start) || 0,
+                        x: 0
+                    };
+
+                    card.addEventListener('mouseenter', () => { state.paused = true; });
+                    card.addEventListener('mouseleave', () => { state.paused = false; });
+                    card.addEventListener('touchstart', () => { state.paused = !state.paused; }, { passive: true });
+
+                    items.push(state);
+                });
+            });
+
+            function initPositions() {
+                items.forEach(item => {
+                    const rowW = item.row.offsetWidth || window.innerWidth;
+                    const cardW = item.el.offsetWidth || 220;
+                    const span = rowW + cardW + 80;
+                    item.x = item.startRatio * span - cardW * 0.2;
+                    item.el.style.transform = `translate3d(${item.x}px, -50%, 0)`;
+                });
+            }
+
+            initPositions();
+            window.addEventListener('resize', initPositions);
+
+            let lastTime = performance.now();
+            function tick(now) {
+                const dt = Math.min(40, now - lastTime) / 16.67;
+                lastTime = now;
+
+                items.forEach(item => {
+                    if (!item.paused) {
+                        const rowW = item.row.offsetWidth || window.innerWidth;
+                        const cardW = item.el.offsetWidth || 220;
+                        item.x -= item.speed * dt;
+
+                        if (item.x < -cardW - 30) {
+                            item.x = rowW + 30;
+                        }
+                        item.el.style.transform = `translate3d(${item.x}px, -50%, 0)`;
+                    }
+                });
+
+                requestAnimationFrame(tick);
+            }
+
+            requestAnimationFrame(tick);
+        });
+    </script>
+</body>
+</html>

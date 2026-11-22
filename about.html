@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Project — Sex Ed Labyrinth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Хедер -->
+    <header>
+        <button class="mobile-menu-btn" id="burger-btn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        
+        <a href="index.html" class="logo">
+            <img src="photos/logo.svg" alt="Sex Ed Labyrinth">
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="about.html"><img src="photos/lightning.png" alt="⚡" class="nav-icon" onerror="this.style.display='none'"><span data-i18n="nav-about">About Project</span></a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+
+        <button class="lang-btn" id="open-lang-desktop" aria-label="Змінити мову">
+    <span class="lang-text">ENG</span>
+    <span class="lang-arrow">▾</span>
+</button>
+    </header>
+
+    <!-- Основний контент сторінки About Project -->
+    <main class="about-page">
+        <h1 class="about-title" data-i18n="about-heading">ABOUT PROJECT</h1>
+
+        <div class="about-grid">
+            <!-- Ліва колонка: текст та декоративні фігури -->
+            <div class="about-text-column">
+                <p class="about-lead" data-i18n="about-lead">
+                    Sex Ed. Labyrinth focuses on providing sexual education to young people 🫶 aged between <span class="purple-highlight">13-19 years old</span> in Estonia, Albania, Moldova, Ukraine, and Lithuania. The project aims to help teenagers prevent major mistakes in their first sexual experiences, show them how to create their own constitution regarding what other people are allowed and not allowed to do to them, and help them understand that they have their own rights and perspectives.
+                </p>
+
+                <!-- Два кружечки (бузковий та зелений) -->
+                <div class="about-circles">
+                    <span class="dot dot-lilac"></span>
+                    <span class="dot dot-green"></span>
+                </div>
+
+                <!-- Три абзаци дрібнішого тексту -->
+                <div class="about-paragraphs">
+                    <p data-i18n="about-p1">
+                        The project takes the form of an engaging game that provides comprehensive sexual education in a fun and interactive way. The game covers a range of topics, including safe sex practices, consent, and healthy relationships, and is designed to be accessible and engaging for young people.
+                    </p>
+                    <p data-i18n="about-p2">
+                        The primary objectives of the project are to empower young people to make informed choices about their sexual health and wellbeing, promote healthy attitudes towards sex and relationships, and help young people understand that they have their own rights and perspectives. Through this project, we hope to equip young people with the knowledge and tools they need to navigate their sexual experiences safely and confidently, and to help them build healthy and fulfilling relationships.
+                    </p>
+                    <p data-i18n="about-p3">
+                        We believe that this project will play an important role in promoting sexual education and wellbeing among young people coming from inclusive backgrounds in Estonia, Albania, Moldova, Ukraine, and Lithuania.
+                    </p>
+                </div>
+
+                <!-- Два трикутники внизу справа -->
+                <div class="about-triangles">
+                    <span class="tri tri-green"></span>
+                    <span class="tri tri-orange"></span>
+                </div>
+            </div>
+
+            <!-- Права колонка: фіолетова капсула з логотипами партнерів -->
+            <aside class="about-partners-column">
+                <div class="partners-capsule">
+                    <img src="photos/DW dark-blue RGB.png" alt="DW" class="partner-logo partner-dw">
+                    <img src="photos/DW Akademie dark-blue RGB 1.png" alt="DW Akademie" class="partner-logo">
+                    <img src="photos/DW Transtel dark-blue RGB.png" alt="DW Transtel" class="partner-logo">
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Темне меню навігації (з фоном photos/scribble.svg) -->
+    <div id="mobile-menu" class="overlay dark-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo"><img src="photos/logo.svg" alt="SEX ED. LABYRINTH"></a>
+            <button class="close-btn" id="close-mobile-menu" aria-label="Закрити меню">✕</button>
+        </div>
+        <nav class="mobile-nav-list">
+            <a href="about.html" data-i18n="nav-about">About Project</a>
+            <a href="authors.html" data-i18n="nav-authors">Authors</a>
+            <a href="boundaries.html" data-i18n="nav-boundaries">Define your boundaries</a>
+            <a href="advice.html" data-i18n="nav-advice">Psychologist's Advice</a>
+        </nav>
+    </div>
+
+    <!-- Фіолетове меню вибору мови -->
+    <div id="lang-menu" class="overlay purple-overlay">
+        <div class="overlay-header">
+            <a href="index.html" class="overlay-logo">
+                <img src="photos/logo.svg" alt="SEX ED. LABYRINTH">
+            </a>
+            <button class="close-btn" id="close-lang-menu" aria-label="Закрити меню">✕</button>
+        </div>
+
+        <div class="lang-list">
+            <button class="active" data-lang="ENG">ENG</button>
+            <button data-lang="EST">EST</button>
+            <button data-lang="RUM">RUM</button>
+            <button data-lang="LIT">LIT</button>
+            <button data-lang="UKR">UKR</button>
+            <button data-lang="ALB">ALB</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
