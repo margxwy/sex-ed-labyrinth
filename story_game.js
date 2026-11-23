@@ -14,28 +14,32 @@ const storyGameData = {
         scenes: {
             ENG: { title: "WHAT IF HE IS NOT<br>READY?", text: "Her partner wants to take the next step, but she feels hesitant and unsure if she's ready. What is the best step?", choices: [{ text: "Express her hesitation directly without feeling guilty.", next: "end_good" }, { text: "Ignore her inner feeling and go along with it.", next: "end_bad" }], end_good: "Clear communication helped them build deeper trust. Taking things slow is totally valid!", end_bad: "Forcing yourself when not ready creates resentment and anxiety. Always honor your pace." },
             UKR: { title: "А ЩО, ЯКШО ВІН<br>НЕ ГОТОВИЙ?", text: "Її партнер хоче зробити наступний крок, але вона вагається і не впевнена, чи готова до цього. Яке рішення правильне?", choices: [{ text: "Прямо сказати про свої сумніви без відчуття провини.", next: "end_good" }, { text: "Проігнорувати відчуття і погодитися через силу.", next: "end_bad" }], end_good: "Чесна розмова зміцнила довіру. Рухатися у своєму темпі — абсолютно нормально та правильно!", end_bad: "Дії проти власної волі викликають тривогу та розчарування. Поважайте власну готовність." }
-        },
+        }
+    }, 
     '3': {
         photo: 'photos/story3-photo.png',
         titleKey: 'story-3-title',
         scenes: {
             ENG: { title: "WHAT IF HE IS NOT<br>READY?", text: "Her partner wants to take the next step, but she feels hesitant and unsure if she's ready. What is the best step?", choices: [{ text: "Express her hesitation directly without feeling guilty.", next: "end_good" }, { text: "Ignore her inner feeling and go along with it.", next: "end_bad" }], end_good: "Clear communication helped them build deeper trust. Taking things slow is totally valid!", end_bad: "Forcing yourself when not ready creates resentment and anxiety. Always honor your pace." },
             UKR: { title: "А ЩО, ЯКШО ВІН<br>НЕ ГОТОВИЙ?", text: "Її партнер хоче зробити наступний крок, але вона вагається і не впевнена, чи готова до цього. Яке рішення правильне?", choices: [{ text: "Прямо сказати про свої сумніви без відчуття провини.", next: "end_good" }, { text: "Проігнорувати відчуття і погодитися через силу.", next: "end_bad" }], end_good: "Чесна розмова зміцнила довіру. Рухатися у своєму темпі — абсолютно нормально та правильно!", end_bad: "Дії проти власної волі викликають тривогу та розчарування. Поважайте власну готовність." }
-        },
+        }
+    }, 
     '4': {
         photo: 'photos/story4-photo.png',
         titleKey: 'story-4-title',
         scenes: {
             ENG: { title: "WHAT IF HE IS NOT<br>READY?", text: "Her partner wants to take the next step, but she feels hesitant and unsure if she's ready. What is the best step?", choices: [{ text: "Express her hesitation directly without feeling guilty.", next: "end_good" }, { text: "Ignore her inner feeling and go along with it.", next: "end_bad" }], end_good: "Clear communication helped them build deeper trust. Taking things slow is totally valid!", end_bad: "Forcing yourself when not ready creates resentment and anxiety. Always honor your pace." },
             UKR: { title: "А ЩО, ЯКШО ВІН<br>НЕ ГОТОВИЙ?", text: "Її партнер хоче зробити наступний крок, але вона вагається і не впевнена, чи готова до цього. Яке рішення правильне?", choices: [{ text: "Прямо сказати про свої сумніви без відчуття провини.", next: "end_good" }, { text: "Проігнорувати відчуття і погодитися через силу.", next: "end_bad" }], end_good: "Чесна розмова зміцнила довіру. Рухатися у своєму темпі — абсолютно нормально та правильно!", end_bad: "Дії проти власної волі викликають тривогу та розчарування. Поважайте власну готовність." }
-        },
+        }
+    }, 
     '5': {
         photo: 'photos/story5-photo.png',
         titleKey: 'story-5-title',
         scenes: {
             ENG: { title: "WHAT IF HE IS NOT<br>READY?", text: "Her partner wants to take the next step, but she feels hesitant and unsure if she's ready. What is the best step?", choices: [{ text: "Express her hesitation directly without feeling guilty.", next: "end_good" }, { text: "Ignore her inner feeling and go along with it.", next: "end_bad" }], end_good: "Clear communication helped them build deeper trust. Taking things slow is totally valid!", end_bad: "Forcing yourself when not ready creates resentment and anxiety. Always honor your pace." },
             UKR: { title: "А ЩО, ЯКШО ВІН<br>НЕ ГОТОВИЙ?", text: "Її партнер хоче зробити наступний крок, але вона вагається і не впевнена, чи готова до цього. Яке рішення правильне?", choices: [{ text: "Прямо сказати про свої сумніви без відчуття провини.", next: "end_good" }, { text: "Проігнорувати відчуття і погодитися через силу.", next: "end_bad" }], end_good: "Чесна розмова зміцнила довіру. Рухатися у своєму темпі — абсолютно нормально та правильно!", end_bad: "Дії проти власної волі викликають тривогу та розчарування. Поважайте власну готовність." }
-        },
+        }
+    }, 
     '6': {
         photo: 'photos/story6-photo.png',
         titleKey: 'story-6-title',
@@ -45,7 +49,6 @@ const storyGameData = {
         }
     }
 };
-
 // 2. Глобальна функція рендеру гри
 window.renderGame = function() {
     const urlParams = new URLSearchParams(window.location.search);
